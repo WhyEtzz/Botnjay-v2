@@ -879,7 +879,7 @@ if (text.includes('-ssweb')){
       imageToBase64(res.data.result)
         .then(
           (ress) => {
-            conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
