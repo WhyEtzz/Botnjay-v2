@@ -1,6 +1,5 @@
-# CALIPH-BOT
-BOT WHATSAPP HP CALIPH ATIBRATA
-
+# Etzz Bot-v2
+Pake ae jan bacot
 ### Alat dan Bahan
 Siapin alat dan bahannya.
 ```bash
@@ -17,7 +16,7 @@ Sebelum lu jalanin sc nya install dulu lah.
 ```bash
 > kalo lu belum punya apk termux, download di playstore
 > masuk ke apk termux lalu ketik dibawah ini!
-> git clone https://github.com/Bintang73/botst4rz.git
+> git clone https://github.com/WhyEtzz/Botnjay-v2/
 > cd termux-caliph-bot
 > bash install.sh
 > node index.js
@@ -49,4 +48,4 @@ Sebelum lu jalanin sc nya install dulu lah.
 * [`termux-whatsapp-bot`](https://github.com/fdciabdul/termux-whatsapp-bot)
 
 ### Donate
-* [`Saweria`](https://saweria.co/Caliph123)
+* [`Trakteer`](https://trakteer.id/BotEtzz)
