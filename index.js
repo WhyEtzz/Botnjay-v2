@@ -874,7 +874,7 @@ conn.sendMessage(id, 'https://bit.ly/owner_bot' ,MessageType.text);
 }
 if (text.includes('-ssweb')){
   var teks = text.replace(/-ssweb /, '')
-    axios.get('url = get('https://mhankbarbars.herokuapp.com/api/url2image?tipe=desktop&url='+teks)
+    axios.get('https://mhankbarbars.herokuapp.com/api/url2image?tipe=desktop&url='+teks)
     .then((res) => {
       imageToBase64(res.data.result)
         .then(
