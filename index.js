@@ -313,7 +313,7 @@ conn.sendMessage(id, 'Sama sama, semoga harimu menyenangkan :)' ,MessageType.tex
 else if (text == 'thank'){
 conn.sendMessage(id, 'Sama sama, semoga harimu menyenangkan :)' ,MessageType.text);
 }
-else if (text == '-check'){
+else if (text == '-ping'){
 conn.sendMessage(id, 'Masih Online' ,MessageType.text);
 }
 else if (text == 'Thank'){
@@ -870,7 +870,7 @@ if (text.includes("-alay")){
 	})
 }
 else if (text == '-ownerbot'){
-conn.sendMessage(id, 'https://bit.ly/owner_bot' ,MessageType.text);
+conn.sendMessage(id, '085755495437' ,MessageType.text);
 }
 if (text.includes('-ssweb')){
   var teks = text.replace(/-ssweb /, '')
@@ -964,17 +964,30 @@ axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${teks}`).then((res) => 
   })
  }
 if (text.includes('-loli')){
-  var teks = text.replace(/-loli /, '')
-    axios.get('https://st4rz.herokuapp.com/api/randomloli')
-    .then((res) => {
-      imageToBase64(res.data.result)
+     var items = ["loli cosplayer", "cosplay loli", "loli cosplay imut", "loli cosplay hd", "cosplayer loli hd", "gambar cosplayer loli hd"];
+    var loli = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + loli;
+    
+    axios.get(url)
+      .then((result) => {
+        var n = JSON.parse(JSON.stringify(result.data));
+        var loli =  n[Math.floor(Math.random() * n.length)];
+        imageToBase64(loli) 
         .then(
-          (ress) => {
-            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
+            (response) => {
+         conn.reply(id, 'Masih Proses Sayang ^_^', MessageType.text)
+	var buf = Buffer.from(response, 'base64'); 
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error);
+            }
+        )
 }       
 if (text.includes("-stalkig")){
 const teks = text.replace(/-stalkig /, "")
