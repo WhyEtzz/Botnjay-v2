@@ -11,6 +11,7 @@ const imageToBase64 = require('image-to-base64');
 const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
+const intro = require("./lib/intro.js");
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/Kingposeidon__'; // Nama Instagramlu cok
@@ -505,6 +506,8 @@ var tampilTanggal = "TANGGAL: " + hari + ", " + tanggal + " " + bulan + " " + ta
 var tampilWaktu = "JAM: " + jam + ":" + menit + ":" + detik;
 conn.sendMessage(id, info.info(id, BotName, tampilTanggal, tampilWaktu, instagramlu, whatsapplu, kapanbotaktif, grupch1, grupch2) ,MessageType.text);
 }
+else if (text == '-intro'){
+conn.sendMessage(id, intro.intro(id) ,MessageType.text);
 else if (text == '-pict'){
 conn.sendMessage(id, 'kirim -pict cewek/cowok\n\nContoh: -pict cewek' ,MessageType.text);
 }
