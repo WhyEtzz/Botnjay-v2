@@ -12,6 +12,9 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 const intro = require("./lib/intro.js");
+const groupAdmins = isGroupMsg ? await conn.getGroupAdmins(groupId) : ''
+const isGroupAdmins = groupAdmins.includes(sender.id) || false
+const pengirim = sender.id
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/Kingposeidon__'; // Nama Instagramlu cok
