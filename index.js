@@ -123,7 +123,7 @@ if (text.includes('-nulis')){
       imageToBase64(res.data.result)
         .then(
           (ress) => {
-            conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
@@ -888,7 +888,7 @@ if (text.includes('-ssweb')){
      if (text.includes("-wiki1")){
 const teks = text.replace(/-wiki1 /, "")
 axios.get(`https://arugaz.herokuapp.com/api/wiki?q=${teks}`).then((res) => {
-	conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+	conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
     let hasil = `*Pertanyaan: ${teks}*\n\nJawaban: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -903,7 +903,7 @@ axios.get(`https://arugaz.herokuapp.com/api/spamcall?no=${teks}`).then((res) => 
 if (text.includes("-wiki2")){
 const teks = text.replace(/-wiki2 /, "")
 axios.get(`https://arugaz.herokuapp.com/api/wikien?q=${teks}`).then((res) => {
-	conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+	conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
     let hasil = `*Question: ${teks}*\n\nAnswer: ${res.data.result}`;
     conn.sendMessage(id, hasil ,MessageType.text);
 })
@@ -937,7 +937,7 @@ axios.get(`https://arugaz.herokuapp.com/api/spamsms?no=${teks}&jum=1`).then((res
       imageToBase64(res.data.image)
         .then(
           (ress) => {
-            conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
@@ -950,7 +950,7 @@ if (text.includes('-map')){
       imageToBase64(res.data.gambar)
         .then(
           (ress) => {
-            conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
@@ -970,7 +970,7 @@ if (text.includes('-loli')){
       imageToBase64(res.data.result)
         .then(
           (ress) => {
-            conn.sendMessage(id, Bentar ya sayang❤', MessageType.text)
+            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
             var buf = Buffer.from(ress, 'base64')
             conn.sendMessage(id, buf, MessageType.image)
         })
