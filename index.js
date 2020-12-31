@@ -15,6 +15,8 @@ const intro = require("./lib/intro.js");
 const groupAdmins = isGroupMsg ? await conn.getGroupAdmins(groupId) : ''
 const isGroupAdmins = groupAdmins.includes(sender.id) || false
 const pengirim = sender.id
+const groupId = isGroupMsg ? chat.groupMetadata.id : ''
+   
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
 const instagramlu = 'https://instagram.com/Kingposeidon__'; // Nama Instagramlu cok
@@ -825,6 +827,21 @@ if (text.includes("-animepict"))
         )
     
     });
+}
+
+if (text == -tagall){
+if (!isGroupMsg) return conn.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
+            if (!isGroupAdmins) return conn.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!', id)
+            const groupMem = await conn.getGroupMembers(groupId)
+            let hehex = '╔══✪〘 Mention All 〙✪══\n'
+            for (let i = 0; i < groupMem.length; i++) {
+                hehex += '╠➥'
+                hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
+            }
+            hehex += '╚═〘 *E T Z Z - V 2* 〙'
+            await conn.sendTextWithMentions(from, hehex)
+           
+
     }
 
 if (text.includes("-scdl")){
