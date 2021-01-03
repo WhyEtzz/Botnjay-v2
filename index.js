@@ -1021,5 +1021,5 @@ axios.get(`https://st4rz.herokuapp.com/api/stalk?username=${teks}`).then((res) =
  }
   // 
 
-
+}
 })
