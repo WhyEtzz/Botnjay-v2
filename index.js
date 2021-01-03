@@ -16,6 +16,10 @@ const groupAdmins = isGroupMsg ? await conn.getGroupAdmins(groupId) : ''
 const isGroupAdmins = groupAdmins.includes(sender.id) || false
 const pengirim = sender.id
 const groupId = isGroupMsg ? chat.groupMetadata.id : ''
+const db_group = new FileSync(appRoot+'/lib/data/group.json')
+const db = low(db_group)
+db.defaults({ group: []}).write()
+
    
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
