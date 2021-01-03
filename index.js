@@ -12,6 +12,7 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 const intro = require("./lib/intro.js");
+const { type, id, from, t, sender, author, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
 const groupAdmins = isGroupMsg ? await conn.getGroupAdmins(groupId) : ''
 const isGroupAdmins = groupAdmins.includes(sender.id) || false
 const pengirim = sender.id
