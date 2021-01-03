@@ -12,20 +12,16 @@ const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
 const info = require("./lib/info.js");
 const intro = require("./lib/intro.js");
-const { type, id, from, t, sender, author, isGroupMsg, chat, chatId, caption, isMedia, mimetype, quotedMsg, quotedMsgObj, mentionedJidList } = message
-let { body } = message
-        var { name, formattedTitle } = chat
-        let { pushname, verifiedName, formattedName } = sender
-        pushname = pushname || verifiedName || formattedName // verifiedName is the name of someone who uses a business account
-        const groupId = isGroupMsg ? chat.groupMetadata.id : ''
-        const groupAdmins = isGroupMsg ? await conn.getGroupAdmins(groupId) : ''
-        const isGroupAdmins = groupAdmins.includes(sender.id) || false
-		const chats = (type === 'chat') ? body : (type === 'image' || type === 'video') ? caption : ''
-        const pengirim = sender.id
-        const db_group = new FileSync(appRoot+'/lib/data/group.json')
-const db = low(db_group)
-db.defaults({ group: []}).write()
-
+const isGroup = from.endsWith('@g.us')
+const sender = isGroup ? mek.participant : mek.key.remoteJid
+const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
+const groupName = isGroup ? groupMetadata.subject : ''
+const groupId = isGroup ? groupMetadata.jid : ''
+const groupMembers = isGroup ? groupMetadata.participants : ''
+const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
+const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
+const isGroupAdmins = groupAdmins.includes(sender) || false
+		
    
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
