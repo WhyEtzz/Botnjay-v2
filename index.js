@@ -952,19 +952,6 @@ axios.get(`https://arugaz.herokuapp.com/api/spamsms?no=${teks}&jum=1`).then((res
   axios.get(`https://mnazria.herokuapp.com/api/check?ip=${teks}`).then((res) =>{ 
   let hasil = `*City* : ${res.data.city}\n*Latitude* : ${res.data.latitude}\n*Longtitude* : ${res.data.longitude}\n*Region* : ${res.data.region_name}\n*Region Code* : ${res.data.region_code}\n*IP* : ${res.data.ip}\n*Type* : ${res.data.type}\n*Name* : ${res.data.name}\n*zip* : ${res.data.zip}\n*Geonime* : ${res.data.location.geoname_id}\n*Capital* : ${res.data.location.capital}\n*Calling* : ${res.data.location.calling_code}\n\n*Country Flag* : ${res.data.location.country_flag}\n\n*CountryFlagEmoji* : ${res.data.location.country_flag_emoji}` 
   conn.sendMessage(id, hasil, MessageType.text); 
- }
-  if (text.includes('-cooltext')){
-  var teks = text.replace(/-cooltext /, '')
-    axios.get('https://api.haipbis.xyz/randomcooltext?text='+teks)
-    .then((res) => {
-      imageToBase64(res.data.image)
-        .then(
-          (ress) => {
-            conn.sendMessage(id, 'Bentar ya sayang❤', MessageType.text)
-            var buf = Buffer.from(ress, 'base64')
-            conn.sendMessage(id, buf, MessageType.image)
-        })
-    })
 } 
 if (text.includes('-map')){
   var teks = text.replace(/-map /, '')
