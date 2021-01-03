@@ -513,6 +513,7 @@ conn.sendMessage(id, info.info(id, BotName, tampilTanggal, tampilWaktu, instagra
 }
 else if (text == '-intro'){
 conn.sendMessage(id, intro.intro(id) ,MessageType.text);
+}
 else if (text == '-pict'){
 conn.sendMessage(id, 'kirim -pict cewek/cowok\n\nContoh: -pict cewek' ,MessageType.text);
 }
@@ -1011,6 +1012,7 @@ if (text.includes('-loli')){
                 console.log(error);
             }
         )
+});
 }       
 if (text.includes("-stalkig")){
 const teks = text.replace(/-stalkig /, "")
