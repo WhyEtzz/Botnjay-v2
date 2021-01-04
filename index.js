@@ -13,16 +13,7 @@ const donate = require("./lib/donate.js");
 const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, success, close } = require('./lib/functions')
 const info = require("./lib/info.js");
 const intro = require("./lib/intro.js");
-const isGroup = from.endsWith('@g.us')
-const sender = isGroup ? mek.participant : mek.key.remoteJid
-const groupMetadata = isGroup ? await client.groupMetadata(from) : ''
-const groupName = isGroup ? groupMetadata.subject : ''
-const groupId = isGroup ? groupMetadata.jid : ''
-const groupMembers = isGroup ? groupMetadata.participants : ''
-const groupAdmins = isGroup ? getGroupAdmins(groupMembers) : ''
-const isBotGroupAdmins = groupAdmins.includes(botNumber) || false
-const isGroupAdmins = groupAdmins.includes(sender) || false
-		
+	
    
 //
 const BotName = 'Etzz v2'; // Nama Bot Whatsapp
@@ -835,20 +826,7 @@ if (text.includes("-animepict"))
         )
     
     });
-}
 
-if (text == -tagall){
-if (!isGroupMsg) return conn.reply(from, 'Maaf, perintah ini hanya dapat dipakai didalam grup!', id)
-            if (!isGroupAdmins) return conn.reply(from, 'Gagal, perintah ini hanya dapat digunakan oleh admin grup!', id)
-            const groupMem = await conn.getGroupMembers(groupId)
-            let hehex = '╔══✪〘 Mention All 〙✪══\n'
-            for (let i = 0; i < groupMem.length; i++) {
-                hehex += '╠➥'
-                hehex += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
-            }
-            hehex += '╚═〘 *E T Z Z - V 2* 〙'
-            await conn.sendTextWithMentions(from, hehex)
-           
 
     }
 
