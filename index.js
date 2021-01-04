@@ -986,7 +986,7 @@ axios.get(`https://st4rz.herokuapp.com/api/simsimi?kata=${teks}`).then((res) => 
     conn.sendMessage(id, hasil ,MessageType.text);
   })
  }
-if (text.includes('-loli')){
+if (text.includes("-loli")){
      var items = ["loli cosplayer", "cosplay loli", "loli cosplay imut", "loli cosplay hd", "cosplayer loli hd", "gambar cosplayer loli hd"];
     var loli = items[Math.floor(Math.random() * items.length)];
     var url = "https://api.fdci.se/rep.php?gambar=" + loli;
