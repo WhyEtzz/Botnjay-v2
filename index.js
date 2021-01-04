@@ -768,6 +768,35 @@ if (text.includes("-ytmp4"))
         )
     
     });
+}
+
+if (text.includes("-neko"))
+   {
+    var items = ["kucing imut hd", "kucing ganteng hd", "kucing lucu hd", "kucing hd"];
+    var cewe = items[Math.floor(Math.random() * items.length)];
+    var url = "https://api.fdci.se/rep.php?gambar=" + cewe;
+    
+    axios.get(url)
+      .then((result) => {
+        var b = JSON.parse(JSON.stringify(result.data));
+        var cewek =  b[Math.floor(Math.random() * b.length)];
+        imageToBase64(cewek) // Path to the image
+        .then(
+            (response) => {
+	var buf = Buffer.from(response, 'base64'); // Ta-da	
+              conn.sendMessage(
+            id,
+              buf,MessageType.image)
+       
+            }
+        )
+        .catch(
+            (error) => {
+                console.log(error); // Logs an error if there was one
+            }
+        )
+    
+    });
     }
 
    if (text.includes("-pict cowok"))
