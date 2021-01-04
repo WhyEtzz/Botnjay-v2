@@ -10,7 +10,6 @@ const axios = require("axios");
 const imageToBase64 = require('image-to-base64');
 const menu = require("./lib/menu.js");
 const donate = require("./lib/donate.js");
-const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, success, close } = require('./lib/functions')
 const info = require("./lib/info.js");
 const intro = require("./lib/intro.js");
 	
